@@ -124,7 +124,7 @@ class _StatsFlState extends State<StatsFl> {
         child: Stack(
           children: <Widget>[
             widget.child,
-            if (widget.isEnabled)
+            if (widget.isEnabled ?? false)
               IgnorePointer(
                 child: Align(
                   alignment: widget.align ?? Alignment.topLeft,
