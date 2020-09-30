@@ -49,6 +49,7 @@ class StatsFl extends StatefulWidget {
     assert((showText != true || height >= 30), "If showText=true, height must be at least 30px");
     assert((height >= 8), "height must be >= 8px");
     assert(child != null, "child can't be null.");
+    assert(isEnabled != null, "isEnabled can't be null.");
   }
 
   @override
@@ -124,7 +125,7 @@ class _StatsFlState extends State<StatsFl> {
         child: Stack(
           children: <Widget>[
             widget.child,
-            if (widget.isEnabled ?? false)
+            if (widget.isEnabled)
               IgnorePointer(
                 child: Align(
                   alignment: widget.align ?? Alignment.topLeft,
